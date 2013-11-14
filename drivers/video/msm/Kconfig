@@ -239,6 +239,16 @@ config FB_HUAWEI_MIPI_DSI_OTM8009A
 	bool "support MIPI OTM8009A"
 	select FB_MSM_MIPI_DSI
 	default n
+#/*Add otm8018b for video mode*/
+config FB_HUAWEI_MIPI_DSI_OTM8018B
+        bool "support MIPI OTM8018B"
+        select FB_MSM_MIPI_DSI
+        default n
+#/*Add nt35512 for video mode*/
+config FB_HUAWEI_MIPI_DSI_NT35512
+        bool "support MIPI NT35512"
+        select FB_MSM_MIPI_DSI
+        default n
 config FB_HUAWEI_MIPI_DSI_HX8357C
 	bool "support MIPI HX8357C"
 	select FB_MSM_MIPI_DSI

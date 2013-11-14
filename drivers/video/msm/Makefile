@@ -100,6 +100,10 @@ obj-$(CONFIG_FB_HUAWEI_MIPI_DSI_NT35510) += mipi_nt35510_cmd_wvga.o
 obj-$(CONFIG_FB_HUAWEI_MIPI_DSI_NT35516) += mipi_nt35516_cmd_qhd.o
 obj-$(CONFIG_FB_HUAWEI_MIPI_DSI_HX8369A_FWVGA) += mipi_hx8369a_cmd_fwvga.o
 obj-$(CONFIG_FB_HUAWEI_MIPI_DSI_OTM8009A) += mipi_otm8009a_cmd_wvga.o
+#/*Add otm8018b for video mode*/
+obj-$(CONFIG_FB_HUAWEI_MIPI_DSI_OTM8018B) += mipi_otm8018b_video_wvga.o
+#/*Add nt35512 for video mode*/
+obj-$(CONFIG_FB_HUAWEI_MIPI_DSI_NT35512) += mipi_nt35512_video_wvga.o
 obj-$(CONFIG_FB_HUAWEI_MIPI_DSI_NT35510_FWVGA) += mipi_nt35510_cmd_fwvga.o
 obj-$(CONFIG_FB_MSM_MIPI_DSI_TOSHIBA) += mipi_toshiba.o
 obj-$(CONFIG_FB_MSM_MIPI_DSI_NOVATEK) += mipi_novatek.o

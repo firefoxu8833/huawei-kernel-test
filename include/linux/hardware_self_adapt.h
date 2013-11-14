@@ -139,6 +139,12 @@ typedef enum
 	MIPI_NT35510_BOE_WVGA,
 	MIPI_HX8369A_TIANMA_FWVGA,
 	MIPI_OTM8009A_CHIMEI_WVGA,
+        /*Add otm8018b for video mode*/
+        MIPI_VIDEO_OTM8018B_CHIMEI_WVGA,
+        /*Add nt35512 for video mode*/
+        MIPI_VIDEO_NT35512_BOE_WVGA,
+        /*Add nt35512 video mode for byd*/
+        MIPI_VIDEO_NT35512_BYD_WVGA,
 	MIPI_NT35510_BOE_FWVGA,
 	LCD_MAX_NUM,
 	LCD_NONE =0xFF

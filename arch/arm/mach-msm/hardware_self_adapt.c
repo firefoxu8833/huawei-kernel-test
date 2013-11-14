@@ -303,19 +303,15 @@ hw_lcd_interface_type get_hw_lcd_interface_type(void)
 		{
 			switch(hw_lcd_panel)
 			{
-				case LCD_NT35582_BYD_WVGA:
-				case LCD_NT35582_TRULY_WVGA:
-					lcd_interface_type = LCD_IS_MDDI_TYPE1;
-					break;
-				case LCD_NT35510_ALPHA_SI_WVGA:
-					lcd_interface_type = LCD_IS_MDDI_TYPE1;
-					break;
-				case LCD_NT35510_ALPHA_SI_WVGA_TYPE2:
-					lcd_interface_type = LCD_IS_MDDI_TYPE2;
-					break;
-				default:
-					lcd_interface_type = LCD_IS_MDDI_TYPE1;
-					break;
+                        case MIPI_VIDEO_NT35512_BOE_WVGA:
+                        case MIPI_VIDEO_HX8369B_TIANMA_WVGA:
+                        case MIPI_VIDEO_OTM8018B_CHIMEI_WVGA:
+                        case MIPI_VIDEO_NT35512_BYD_WVGA:
+                                lcd_interface_type = LCD_IS_MIPI_VIDEO;
+                                break;
+                        default:
+                                lcd_interface_type = LCD_IS_MIPI_CMD;
+                                break;
 			}
 		}
 	}
@@ -488,9 +484,25 @@ lcd_panel_type get_lcd_panel_type(void)
 			case LCD_HW_ID5:
 				hw_lcd_panel = MIPI_NT35510_BOE_WVGA;
 				break;
-			default:
-				hw_lcd_panel = MIPI_NT35510_BOE_WVGA;
-				break;
+                        /*Add nt35512 video mode for byd*/
+                        case LCD_HW_ID6:
+                                hw_lcd_panel = MIPI_VIDEO_NT35512_BYD_WVGA;
+                                break;
+                        /*Add otm8018b for video mode*/
+                        case LCD_HW_ID8:
+                                hw_lcd_panel = MIPI_VIDEO_OTM8018B_CHIMEI_WVGA;
+                                break;
+                        /*Add nt35512 for video mode*/
+                        case LCD_HW_ID9:
+                                hw_lcd_panel = MIPI_VIDEO_NT35512_BOE_WVGA;
+                                break;
+            case LCD_HW_IDA:
+
+                hw_lcd_panel = MIPI_CMD_NT35510_CHIMEI_WVGA;
+                                break;
+                        default:
+                                hw_lcd_panel = MIPI_CMD_HX8369A_TIANMA_WVGA;
+                                break;
 		}
 	}
 	else if(  machine_is_msm8x25_U8825()
@@ -924,6 +936,18 @@ char *get_lcd_panel_name(void)
 		case MIPI_OTM8009A_CHIMEI_WVGA:
 			pname = "CHIMEI OTM8009A";
 			break;
+                /*Add otm8018b for video mode*/
+                case MIPI_VIDEO_OTM8018B_CHIMEI_WVGA:
+                        pname = "CHIMEI OTM8018B";
+                        break;
+                /*Add nt35512 for video mode*/
+                case MIPI_VIDEO_NT35512_BOE_WVGA:
+                        pname = "BOE NT35512";
+                        break;
+                /*Add nt35512 video mode for byd*/
+                case MIPI_VIDEO_NT35512_BYD_WVGA:
+                        pname = "BYD NT35512";
+                        break;
 		case MIPI_NT35510_BOE_FWVGA:
 			pname = "BOE NT35510";
 			break;

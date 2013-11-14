@@ -337,6 +337,12 @@ void process_mipi_table(struct msm_fb_data_type *mfd,struct dsi_buf *tp,
 			case MIPI_NT35510_BOE_WVGA:
 			case MIPI_HX8369A_TIANMA_FWVGA:
 			case MIPI_OTM8009A_CHIMEI_WVGA:
+                        /*Add otm8018b for video mode*/
+                        case MIPI_VIDEO_OTM8018B_CHIMEI_WVGA:
+                        /*Add nt35512 for video mode*/
+                        case MIPI_VIDEO_NT35512_BOE_WVGA:
+                        /*Add nt35512 video mode for byd*/
+                        case MIPI_VIDEO_NT35512_BYD_WVGA:
 			case MIPI_NT35510_BOE_FWVGA:
 				mipi_lcd_register_write(mfd,tp,reg,value,0);
 				break;
